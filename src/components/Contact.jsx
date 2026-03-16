@@ -1,6 +1,6 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { personalInfo } from '../data/portfolioData'
-import GitHubStats from './Githubstats'
+import GitHubStats from './GitHubStats'
 import { useState, useRef } from 'react'
 import emailjs from '@emailjs/browser'
 
