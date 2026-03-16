@@ -71,7 +71,7 @@ export const skillGroups = [
 
 export const experiences = [
   {
-    date: "2025 — PRESENT",
+    date: "Feb 2026 — PRESENT",
     role: "Computer Networking Analyst & Full Stack Developer",
     company: "Infinity Byte",
     location: "Lahore, Pakistan",
