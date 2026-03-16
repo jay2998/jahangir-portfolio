@@ -9,7 +9,7 @@ export const personalInfo = {
     "IoT Solutions Builder",
   ],
   location: "Lahore, Pakistan",
-  company: "Infinity Byte",
+  company: "Infinity Byte & Skylink", 
   email: "jahangir.ali2998@gmail.com",
   phone: "+92 3264053540",
   linkedin: "https://linkedin.com/in/jahangir-ali-0352451b5",
@@ -70,16 +70,28 @@ export const skillGroups = [
 ];
 
 export const experiences = [
-  {
-    date: "Feb 2026 — PRESENT",
-    role: "Computer Networking Analyst & Full Stack Developer",
+ {
+    date: "FEB 2026 — PRESENT",
+    role: "Junior Frontend Developer",
     company: "Infinity Byte",
     location: "Lahore, Pakistan",
     bullets: [
+      "Developing web applications and internal tools using React, Node.js, and Tailwind CSS.",
+      "Implementing responsive UI components and integrating RESTful APIs for client-facing products.",
+      "Collaborating with cross-functional teams on system integration and deployment pipelines.",
+      "Participating in code reviews, maintaining documentation, and following Agile workflows.",
+    ],
+  },
+  {
+    date: "FEB 2026 — PRESENT",
+    role: "Computer Networking Analyst",
+    company: "Skylink",
+    location: "Lahore, Pakistan",
+    bullets: [
       "Designing and maintaining network infrastructure for enterprise clients.",
-      "Developing full-stack web applications and internal tools.",
-      "Implementing secure access controls and network monitoring solutions.",
-      "Collaborating with cross-functional teams on system integration projects.",
+      "Implementing secure access controls, firewall policies, and network monitoring solutions.",
+      "Configuring routers, switches, VLANs, and VPNs for optimal performance and security.",
+      "Providing escalated technical support and managing end-to-end incident resolution.",
     ],
   },
   {
