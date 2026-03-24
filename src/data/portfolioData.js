@@ -157,7 +157,16 @@ export const experiences = [
 export const projects = [
   // --- Full Stack / Web ---
   {
-    num: "01",
+  num: "01",
+  title: "FreelanceHub — Freelance Marketplace",
+  emoji: "🛍️",
+  description: "A full-stack freelance marketplace where sellers post gigs and buyers browse, order and review services. Built with React, Node.js, MongoDB and Cloudinary.",
+  tags: ["React", "Node.js", "MongoDB", "Tailwind CSS", "Express", "JWT"],
+  github: "https://github.com/jay2998/freelance-marketplace",
+  live: "https://freelance-marketplace-l9z9.vercel.app"
+}
+  {
+    num: "02",
     icon: "🛒",
     title: "E-Commerce Frontend",
     desc: "A full-featured e-commerce frontend built with React and Tailwind CSS. Includes product listings, cart management, and a clean responsive UI.",
@@ -166,8 +175,9 @@ export const projects = [
     live: "https://e-commerce-frontend-mu-jet.vercel.app",
     publication: null,
   },
+
   {
-    num: "02",
+    num: "03",
     icon: "🏥",
     title: "Pulse Check — Hospital Monitoring",
     desc: "Hospital bedside monitoring system built with React. Tracks and visualises patient vitals in real-time with a clean clinical dashboard interface.",
@@ -177,7 +187,7 @@ export const projects = [
     publication: null,
   },
   {
-    num: "03",
+    num: "04",
     icon: "🌫️",
     title: "Real-Time AQI Tracker",
     desc: "Live air quality index tracker that fetches real-time AQI data for any location. Displays pollution levels, health recommendations, and trend data.",
@@ -187,7 +197,7 @@ export const projects = [
     publication: null,
   },
   {
-    num: "04",
+    num: "05",
     icon: "📊",
     title: "Finance Dashboard",
     desc: "A comprehensive personal finance dashboard with charts, expense tracking, and financial analytics. Built with React and modern UI components.",
@@ -198,7 +208,7 @@ export const projects = [
   },
   // --- Hardware / IoT ---
   {
-    num: "05",
+    num: "06",
     icon: "🚗",
     title: "Driver Monitoring System",
     desc: "Real-time driver distraction detection system using computer vision to enhance road safety. Detects drowsiness and inattentiveness with live alerts.",
@@ -208,7 +218,7 @@ export const projects = [
     publication: "https://ecasp.ece.iit.edu/publications/2012-present/2023-12.pdf",
   },
   {
-    num: "06",
+    num: "07",
     icon: "🏠",
     title: "IoT Automation & Security Platform",
     desc: "Secure web-based IoT system to control electrical components such as lights and fans remotely, with role-based access control mechanisms.",
@@ -218,7 +228,7 @@ export const projects = [
     publication: null,
   },
   {
-    num: "07",
+    num: "08",
     icon: "📱",
     title: "COVID-19 Contact Tracing App",
     desc: "Android application using Bluetooth beacon technology for proximity detection and exposure tracking to identify potential COVID-19 exposure events.",
