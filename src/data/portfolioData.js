@@ -158,8 +158,8 @@ export const projects = [
   // --- Full Stack / Web ---
   {
   num: "01",
+  icon: "🛍️",
   title: "FreelanceHub — Freelance Marketplace",
-  emoji: "🛍️",
   description: "A full-stack freelance marketplace where sellers post gigs and buyers browse, order and review services. Built with React, Node.js, MongoDB and Cloudinary.",
   tags: ["React", "Node.js", "MongoDB", "Tailwind CSS", "Express", "JWT"],
   github: "https://github.com/jay2998/freelance-marketplace",
