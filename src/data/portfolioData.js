@@ -164,7 +164,7 @@ export const projects = [
   tags: ["React", "Node.js", "MongoDB", "Tailwind CSS", "Express", "JWT"],
   github: "https://github.com/jay2998/freelance-marketplace",
   live: "https://freelance-marketplace-l9z9.vercel.app"
-}
+},
   {
     num: "02",
     icon: "🛒",
