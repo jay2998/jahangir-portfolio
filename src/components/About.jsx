@@ -55,10 +55,10 @@ export default function About() {
 
           <div className="flex flex-col gap-2.5">
             {infoRows.map((row) => (
-              <div key={row.label} className="flex items-center gap-4 px-5 py-3.5 bg-[#0D1526] border border-[#C9A84C]/10 rounded-lg text-sm hover:border-[#C9A84C]/30 transition-colors duration-300">
-                <span className="font-mono text-[#C9A84C]/70 text-xs w-20 shrink-0 tracking-wider">{row.label}</span>
+              <div key={row.label} className={`flex items-center gap-4 px-5 py-3.5 border rounded-lg text-sm transition-colors duration-300 ${true ? 'bg-[#0D1526] border-[#C9A84C]/10 hover:border-[#C9A84C]/30' : 'bg-white border-[#C9A84C]/20 hover:border-[#C9A84C]/40 hover:bg-[#F9F7F3]'}`}>
+                <span className={`font-mono text-xs w-20 shrink-0 tracking-wider ${true ? 'text-[#C9A84C]/70' : 'text-[#555]'}`}>{row.label}</span>
                 <span className="w-px h-4 bg-[#C9A84C]/20 shrink-0" />
-                <span className="text-[#E8E4D9] text-xs">{row.value}</span>
+                <span className={`text-xs ${true ? 'text-[#E8E4D9]' : 'text-[#1a1208]'}`}>{row.value}</span>
               </div>
             ))}
           </div>
@@ -69,19 +69,23 @@ export default function About() {
           ref={rightRef}
           className={`transition-all duration-700 delay-150 ${rightVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}
         >
-          <div className="bg-[#0D1526] border border-[#C9A84C]/15 rounded-2xl p-8 relative overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/50 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/20 to-transparent" />
+          <div className={`border rounded-2xl p-8 relative overflow-hidden ${true ? 'bg-[#0D1526] border-[#C9A84C]/15' : 'bg-white border-[#C9A84C]/20 shadow-sm'}`}>
+            <div className={`absolute top-0 left-0 right-0 h-px ${true ? 'bg-gradient-to-r from-transparent via-[#C9A84C]/50 to-transparent' : 'bg-gradient-to-r from-transparent via-[#C9A84C]/30 to-transparent'}`} />
+            <div className={`absolute bottom-0 left-0 right-0 h-px ${true ? 'bg-gradient-to-r from-transparent via-[#C9A84C]/20 to-transparent' : 'bg-gradient-to-r from-transparent via-[#C9A84C]/15 to-transparent'}`} />
 
-            <p className="font-mono text-xs text-[#7A8099]/60 mb-6 tracking-wider">// expertise</p>
+            <p className={`font-mono text-xs mb-6 tracking-wider ${true ? 'text-[#7A8099]/60' : 'text-[#555]/70'}`}>// expertise</p>
             <div className="grid grid-cols-2 gap-3">
               {specialties.map((s) => (
                 <div
                   key={s.label}
-                  className="flex flex-col items-center gap-3 py-7 px-3 bg-[#111D33] border border-[#C9A84C]/8 rounded-xl text-center hover:border-[#C9A84C]/40 hover:bg-[#C9A84C]/5 transition-all duration-300 hover:-translate-y-1 cursor-default"
+                  className={`flex flex-col items-center gap-3 py-7 px-3 border rounded-xl text-center transition-all duration-300 hover:-translate-y-1 cursor-default ${
+                    true 
+                      ? 'bg-[#111D33] border-[#C9A84C]/8 hover:border-[#C9A84C]/40 hover:bg-[#C9A84C]/5' 
+                      : 'bg-[#F9F7F3] border-[#C9A84C]/15 hover:border-[#C9A84C]/40 hover:bg-[#F0EDE8]'
+                  }`}
                 >
                   <span className="text-3xl">{s.icon}</span>
-                  <span className="text-xs text-[#7A8099] tracking-wide">{s.label}</span>
+                  <span className={`text-xs tracking-wide ${true ? 'text-[#7A8099]' : 'text-[#333]'}`}>{s.label}</span>
                 </div>
               ))}
             </div>

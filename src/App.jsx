@@ -14,8 +14,8 @@ import CursorGlow from './components/CursorGlow'
 function App() {
   const [darkMode, setDarkMode] = useState(true)
 
-  const bg   = darkMode ? 'bg-[#080E1C] text-[#E8E4D9]' : 'bg-[#F5F0E8] text-[#1a1208]'
-  const foot = darkMode ? 'border-[#C9A84C]/15 text-[#7A8099]' : 'border-[#C9A84C]/25 text-[#888]'
+  const bg   = darkMode ? 'bg-[#080E1C] text-[#E8E4D9]' : 'bg-white text-[#0a0a0a]'
+  const foot = darkMode ? 'border-[#C9A84C]/15 text-[#7A8099]' : 'border-[#C9A84C]/30 text-[#333]'
 
   return (
     <>
