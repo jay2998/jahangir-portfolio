@@ -172,7 +172,7 @@ export const projects = [
     desc: "Full-featured POS system built at Afaq Technologies for managing sales transactions, billing, and inventory tracking, with a SQL-backed database for persistent, reliable record-keeping.",
     tags: ["React", "JSX", "Node.js", "SQL"],
     github: null,
-    live: null,
+    live: "https://pos.afaqmis.com/login",
     publication: null,
   },
   {
@@ -213,7 +213,7 @@ export const projects = [
     tags: ["Raspberry Pi", "NVIDIA Jetson Nano", "Python", "OpenCV"],
     github: null,
     live: null,
-    publication: null,
+    publication: "https://ecasp.ece.iit.edu/publications/2012-present/2023-12.pdf",
   },
 ];
 
