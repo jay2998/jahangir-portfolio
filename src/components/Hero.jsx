@@ -73,7 +73,6 @@ export default function Hero() {
             </span>
           </h1>
 
-          {/* Typewriter */}
           <div
             className="font-mono text-sm md:text-lg text-[#C9A84C]/80 mb-6 h-7 animate-fade-up opacity-0 tracking-wide"
             style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}

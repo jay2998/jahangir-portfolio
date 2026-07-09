@@ -3,29 +3,33 @@ import { education } from '../data/portfolioData'
 
 function EduCard({ edu, index }) {
   const { ref, isVisible } = useScrollAnimation()
+  const isDark = true
 
   return (
     <div
       ref={ref}
-      className={`relative bg-[#0D1526] border border-[#C9A84C]/10 rounded-2xl p-10 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-[#C9A84C]/35 ${
+      className={`relative border rounded-2xl p-10 overflow-hidden transition-all duration-500 hover:-translate-y-2 ${
+        isDark 
+          ? 'bg-[#0D1526] border-[#C9A84C]/10 hover:border-[#C9A84C]/35' 
+          : 'bg-white border-[#C9A84C]/15 hover:border-[#C9A84C]/40 shadow-sm hover:shadow-md'
+      } ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
       style={{
         transitionDelay: `${index * 150}ms`,
+        boxShadow: isVisible && isDark ? '0 15px 40px rgba(0,0,0,0.4), 0 0 30px rgba(201,168,76,0.06)' : 'none',
       }}
-      onMouseEnter={e => e.currentTarget.style.boxShadow = '0 15px 40px rgba(0,0,0,0.4), 0 0 30px rgba(201,168,76,0.06)'}
-      onMouseLeave={e => e.currentTarget.style.boxShadow = 'none'}
     >
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/50 to-transparent" />
+      <div className={`absolute top-0 left-0 right-0 h-px ${isDark ? 'bg-gradient-to-r from-transparent via-[#C9A84C]/50 to-transparent' : 'bg-gradient-to-r from-transparent via-[#C9A84C]/30 to-transparent'}`} />
 
-      <div className="w-10 h-10 rounded-lg border border-[#C9A84C]/30 flex items-center justify-center mb-6 text-[#C9A84C] text-lg">
+      <div className={`w-10 h-10 rounded-lg border flex items-center justify-center mb-6 text-lg ${isDark ? 'border-[#C9A84C]/30 text-[#C9A84C]' : 'border-[#C9A84C]/30 text-[#C9A84C]'}`}>
         🎓
       </div>
 
       <p className="font-mono text-xs text-[#C9A84C]/60 tracking-[0.2em] uppercase mb-3">{edu.degree}</p>
-      <h3 className="font-display text-lg font-semibold text-[#E8E4D9] mb-3 leading-snug">{edu.title}</h3>
-      <p className="text-[#C9A84C]/80 text-sm mb-1">{edu.uni}</p>
-      <p className="text-[#7A8099] text-sm">{edu.location}</p>
+      <h3 className={`font-display text-lg font-semibold mb-3 leading-snug ${isDark ? 'text-[#E8E4D9]' : 'text-[#1a1208]'}`}>{edu.title}</h3>
+      <p className={`text-sm mb-1 ${isDark ? 'text-[#C9A84C]/80' : 'text-[#555]'}`}>{edu.uni}</p>
+      <p className={`text-sm ${isDark ? 'text-[#7A8099]' : 'text-[#666]'}`}>{edu.location}</p>
     </div>
   )
 }

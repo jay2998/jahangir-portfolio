@@ -4,44 +4,59 @@ import { projects } from '../data/portfolioData'
 function ProjectCard({ project, index }) {
   const { ref, isVisible } = useScrollAnimation()
   const hasLinks = project.github || project.live || project.publication
+  const isDark = true
 
   return (
     <div
       ref={ref}
-      className={`relative bg-[#0D1526] border border-[#C9A84C]/10 rounded-2xl p-8 overflow-hidden cursor-default group transition-all duration-500 hover:-translate-y-2 hover:border-[#C9A84C]/40 flex flex-col ${
+      className={`relative border rounded-2xl p-8 overflow-hidden cursor-default group transition-all duration-500 hover:-translate-y-2 flex flex-col ${
+        isDark 
+          ? 'bg-[#0D1526] border-[#C9A84C]/10 hover:border-[#C9A84C]/40' 
+          : 'bg-white border-[#C9A84C]/15 hover:border-[#C9A84C]/40 shadow-sm hover:shadow-md'
+      } ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
-      onMouseEnter={e => e.currentTarget.style.boxShadow = '0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(201,168,76,0.08)'}
+      onMouseEnter={e => e.currentTarget.style.boxShadow = isDark ? '0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(201,168,76,0.08)' : '0 10px 30px rgba(201,168,76,0.1)'}
       onMouseLeave={e => e.currentTarget.style.boxShadow = 'none'}
     >
       {/* Top accent on hover */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className={`absolute top-0 left-0 right-0 h-px ${isDark ? 'bg-gradient-to-r from-transparent via-[#C9A84C]/40 to-transparent' : 'bg-gradient-to-r from-transparent via-[#C9A84C]/30 to-transparent'} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
 
       {/* Publication badge */}
       {project.publication && (
         <div className="absolute top-4 left-4">
-          <span className="font-mono text-[10px] px-2 py-0.5 bg-[#C9A84C]/10 border border-[#C9A84C]/30 rounded text-[#C9A84C]/80 tracking-widest uppercase">
+          <span className={`font-mono text-[10px] px-2 py-0.5 border rounded tracking-widest uppercase ${
+            isDark 
+              ? 'bg-[#C9A84C]/10 border-[#C9A84C]/30 text-[#C9A84C]/80' 
+              : 'bg-[#C9A84C]/8 border-[#C9A84C]/40 text-[#555]'
+          }`}>
             Published
           </span>
         </div>
       )}
 
       {/* Big number */}
-      <span className="absolute top-5 right-6 font-display text-5xl font-bold text-[#C9A84C]/6 group-hover:text-[#C9A84C]/12 transition-colors duration-300 select-none">
+      <span className={`absolute top-5 right-6 font-display text-5xl font-bold select-none group-hover:text-[#C9A84C]/12 transition-colors duration-300 ${
+        isDark ? 'text-[#C9A84C]/6' : 'text-[#C9A84C]/3'
+      }`}>
         {project.num}
       </span>
 
       <div className={`text-3xl mb-5 ${project.publication ? 'mt-6' : ''}`}>{project.icon}</div>
-      <h3 className="font-display text-lg font-semibold text-[#E8E4D9] mb-3">{project.title}</h3>
-      <p className="text-sm text-[#7A8099] leading-relaxed mb-6 flex-1">{project.desc}</p>
+      <h3 className={`font-display text-lg font-semibold mb-3 ${isDark ? 'text-[#E8E4D9]' : 'text-[#1a1208]'}`}>{project.title}</h3>
+      <p className={`text-sm leading-relaxed mb-6 flex-1 ${isDark ? 'text-[#7A8099]' : 'text-[#555]'}`}>{project.desc}</p>
 
       {/* Tags */}
       <div className="flex flex-wrap gap-2 mb-6">
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className="font-mono text-xs px-2.5 py-1 border border-[#C9A84C]/20 rounded text-[#C9A84C]/70 bg-[#C9A84C]/5 tracking-wide"
+            className={`font-mono text-xs px-2.5 py-1 border rounded tracking-wide ${
+              isDark 
+                ? 'border-[#C9A84C]/20 text-[#C9A84C]/70 bg-[#C9A84C]/5' 
+                : 'border-[#C9A84C]/25 text-[#555] bg-[#C9A84C]/3'
+            }`}
           >
             {tag}
           </span>
@@ -50,13 +65,17 @@ function ProjectCard({ project, index }) {
 
       {/* Links */}
       {hasLinks && (
-        <div className="flex flex-wrap items-center gap-4 pt-5 border-t border-[#C9A84C]/10">
+        <div className={`flex flex-wrap items-center gap-4 pt-5 border-t ${isDark ? 'border-[#C9A84C]/10' : 'border-[#C9A84C]/15'}`}>
           {project.github && (
             <a
               href={project.github}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 text-xs font-mono text-[#7A8099] hover:text-[#C9A84C] transition-colors duration-300"
+              className={`flex items-center gap-1.5 text-xs font-mono transition-colors duration-300 ${
+                isDark 
+                  ? 'text-[#7A8099] hover:text-[#C9A84C]' 
+                  : 'text-[#555] hover:text-[#C9A84C]'
+              }`}
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
@@ -69,7 +88,11 @@ function ProjectCard({ project, index }) {
               href={project.publication}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 text-xs font-mono text-[#7A8099] hover:text-[#C9A84C] transition-colors duration-300"
+              className={`flex items-center gap-1.5 text-xs font-mono transition-colors duration-300 ${
+                isDark 
+                  ? 'text-[#7A8099] hover:text-[#C9A84C]' 
+                  : 'text-[#555] hover:text-[#C9A84C]'
+              }`}
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -86,7 +109,11 @@ function ProjectCard({ project, index }) {
               href={project.live}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 text-xs font-mono text-[#7A8099] hover:text-[#C9A84C] transition-colors duration-300 ml-auto"
+              className={`flex items-center gap-1.5 text-xs font-mono transition-colors duration-300 ml-auto ${
+                isDark 
+                  ? 'text-[#7A8099] hover:text-[#C9A84C]' 
+                  : 'text-[#555] hover:text-[#C9A84C]'
+              }`}
             >
               Live Demo
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
