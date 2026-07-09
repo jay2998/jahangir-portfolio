@@ -61,14 +61,21 @@ export default function Hero({ darkMode = true }) {
             style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
           >
             <span className={`block ${isDark ? 'text-[#E8E4D9]' : 'text-[#0a0a0a]'}`}>Jahangir</span>
-            <span className={`block ${isDark ? 'text-[#C9A84C]' : 'text-[#C9A84C]'}`} style={isDark ? {
-              background: 'linear-gradient(90deg, #C9A84C, #E8C96A, #C9A84C)',
-              backgroundSize: '200% auto',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              animation: 'shimmer 3s linear infinite',
-            } : {}}>
+            <span
+              className={`block ${
+                isDark 
+                  ? '' 
+                  : 'text-[#C9A84C]'
+              }`}
+              style={isDark ? {
+                background: 'linear-gradient(90deg, #C9A84C, #E8C96A, #C9A84C)',
+                backgroundSize: '200% auto',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                animation: 'shimmer 3s linear infinite',
+              } : {}}
+            >
               Ali
             </span>
           </h1>
