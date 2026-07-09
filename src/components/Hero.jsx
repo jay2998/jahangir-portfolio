@@ -4,8 +4,9 @@ import { personalInfo, stats } from '../data/portfolioData'
 
 const PROFILE_IMAGE = '/images/profile.jpg'
 
-export default function Hero() {
+export default function Hero({ darkMode = true }) {
   const typed = useTypewriter(personalInfo.titles, 70, 40, 2000)
+  const isDark = darkMode !== false
 
   return (
     <section
@@ -45,23 +46,27 @@ export default function Hero() {
         <div className="flex-1 min-w-0">
           {/* Tag */}
           <div
-            className="flex items-center gap-3 font-mono text-[#C9A84C]/70 text-xs mb-8 animate-fade-up opacity-0 tracking-widest uppercase"
+            className={`flex items-center gap-3 font-mono text-xs mb-8 animate-fade-up opacity-0 tracking-widest uppercase ${
+              isDark ? 'text-[#C9A84C]/70' : 'text-[#333]/70'
+            }`}
             style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
           >
-            <span className="block w-10 h-px bg-[#C9A84C]/50" />
+            <span className={`block w-10 h-px ${isDark ? 'bg-[#C9A84C]/50' : 'bg-[#333]/50'}`} />
             Available for opportunities
           </div>
 
           {/* Name */}
           <h1
-            className="font-display text-5xl md:text-7xl font-bold leading-none mb-6 animate-fade-up opacity-0"
+            className={`font-display text-5xl md:text-7xl font-bold leading-none mb-6 animate-fade-up opacity-0`}
             style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
           >
-            <span className="block text-[#E8E4D9]">Jahangir</span>
+            <span className={`block ${isDark ? 'text-[#E8E4D9]' : 'text-[#0a0a0a]'}`}>Jahangir</span>
             <span
               className="block"
               style={{
-                background: 'linear-gradient(90deg, #C9A84C, #E8C96A, #C9A84C)',
+                background: isDark 
+                  ? 'linear-gradient(90deg, #C9A84C, #E8C96A, #C9A84C)'
+                  : 'linear-gradient(90deg, #0a0a0a, #333, #0a0a0a)',
                 backgroundSize: '200% auto',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -74,28 +79,36 @@ export default function Hero() {
           </h1>
 
           <div
-            className="font-mono text-sm md:text-lg text-[#C9A84C]/80 mb-6 h-7 animate-fade-up opacity-0 tracking-wide"
+            className={`font-mono text-sm md:text-lg mb-6 h-7 animate-fade-up opacity-0 tracking-wide ${
+              isDark ? 'text-[#C9A84C]/80' : 'text-[#0a0a0a]/90'
+            }`}
             style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}
           >
             {typed}
-            <span className="inline-block w-0.5 h-4 bg-[#C9A84C] ml-1 align-middle animate-blink" />
+            <span className={`inline-block w-0.5 h-4 ml-1 align-middle animate-blink ${
+              isDark ? 'bg-[#C9A84C]' : 'bg-[#0a0a0a]'
+            }`} />
           </div>
 
           {/* Divider */}
           <div
-            className="w-20 h-px bg-gradient-to-r from-[#C9A84C] to-transparent mb-6 animate-fade-up opacity-0"
+            className={`w-20 h-px mb-6 animate-fade-up opacity-0 ${
+              isDark ? 'bg-gradient-to-r from-[#C9A84C] to-transparent' : 'bg-gradient-to-r from-[#0a0a0a] to-transparent'
+            }`}
             style={{ animationDelay: '0.7s', animationFillMode: 'forwards' }}
           />
 
           {/* Description */}
           <p
-            className="text-[#7A8099] text-sm md:text-base max-w-lg leading-relaxed mb-10 animate-fade-up opacity-0"
+            className={`text-sm md:text-base max-w-lg leading-relaxed mb-10 animate-fade-up opacity-0 ${
+              isDark ? 'text-[#7A8099]' : 'text-[#333]/80'
+            }`}
             style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}
           >
-            Based in <span className="text-[#C9A84C]">Lahore, Pakistan</span>, I combine
-            <span className="text-[#E8E4D9]"> network engineering</span>,
-            <span className="text-[#E8E4D9]"> IT operations</span>, and
-            <span className="text-[#E8E4D9]"> full-stack development</span> to deliver dependable systems and modern digital products.
+            Based in <span className={isDark ? 'text-[#C9A84C]' : 'text-[#0a0a0a] font-semibold'}>Lahore, Pakistan</span>, I combine
+            <span className={isDark ? 'text-[#E8E4D9]' : 'text-[#0a0a0a] font-semibold'}> network engineering</span>,
+            <span className={isDark ? 'text-[#E8E4D9]' : 'text-[#0a0a0a] font-semibold'}> IT operations</span>, and
+            <span className={isDark ? 'text-[#E8E4D9]' : 'text-[#0a0a0a] font-semibold'}> full-stack development</span> to deliver dependable systems and modern digital products.
           </p>
 
           {/* Buttons */}
@@ -117,9 +130,13 @@ export default function Hero() {
               View Selected Work →
             </a>
             <a
-              href="/cv/Jahangir_Ali_CV.pdf"
+              href="/cv/Jahangir Ali CV Pakistan 2026.pdf"
               download
-              className="px-7 py-3.5 border border-[#C9A84C]/50 text-[#C9A84C] font-sans text-sm font-medium tracking-wide rounded hover:bg-[#C9A84C]/8 hover:border-[#C9A84C] transition-all duration-300"
+              className={`px-7 py-3.5 font-sans text-sm font-medium tracking-wide rounded transition-all duration-300 border ${
+                isDark 
+                  ? 'border-[#C9A84C]/50 text-[#C9A84C] hover:bg-[#C9A84C]/8 hover:border-[#C9A84C]'
+                  : 'border-[#0a0a0a]/30 text-[#0a0a0a] hover:bg-[#0a0a0a]/5 hover:border-[#0a0a0a]'
+              }`}
             >
               Download CV
             </a>
@@ -127,7 +144,11 @@ export default function Hero() {
               href={personalInfo.github}
               target="_blank"
               rel="noreferrer"
-              className="px-7 py-3.5 border border-[#E8E4D9]/10 text-[#7A8099] font-sans text-sm font-medium tracking-wide rounded hover:border-[#E8E4D9]/30 hover:text-[#E8E4D9] transition-all duration-300 flex items-center gap-2"
+              className={`px-7 py-3.5 font-sans text-sm font-medium tracking-wide rounded transition-all duration-300 flex items-center gap-2 border ${
+                isDark
+                  ? 'border-[#E8E4D9]/10 text-[#7A8099] hover:border-[#E8E4D9]/30 hover:text-[#E8E4D9]'
+                  : 'border-[#0a0a0a]/20 text-[#333] hover:border-[#0a0a0a]/40 hover:text-[#0a0a0a]'
+              }`}
             >
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
@@ -138,13 +159,15 @@ export default function Hero() {
 
           {/* Stats */}
           <div
-            className="flex flex-wrap gap-8 mt-12 pt-10 border-t border-[#C9A84C]/10 animate-fade-up opacity-0"
+            className={`flex flex-wrap gap-8 mt-12 pt-10 animate-fade-up opacity-0 border-t ${
+              isDark ? 'border-[#C9A84C]/10' : 'border-[#0a0a0a]/10'
+            }`}
             style={{ animationDelay: '1.2s', animationFillMode: 'forwards' }}
           >
             {stats.map((s) => (
               <div key={s.label}>
-                <div className="font-display text-2xl font-bold text-[#C9A84C]">{s.num}</div>
-                <div className="text-xs text-[#7A8099] mt-1 tracking-wide">{s.label}</div>
+                <div className={`font-display text-2xl font-bold ${isDark ? 'text-[#C9A84C]' : 'text-[#0a0a0a]'}`}>{s.num}</div>
+                <div className={`text-xs mt-1 tracking-wide ${isDark ? 'text-[#7A8099]' : 'text-[#333]/70'}`}>{s.label}</div>
               </div>
             ))}
           </div>
