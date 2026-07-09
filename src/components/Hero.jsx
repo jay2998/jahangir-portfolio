@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useTypewriter } from '../hooks/useTypewriter'
 import { personalInfo, stats } from '../data/portfolioData'
+import heroBg from '../assets/hero.png'
 
 
 const PROFILE_IMAGE = '/images/profile.jpg'
@@ -40,6 +41,15 @@ export default function Hero({ darkMode = true }) {
           animationDelay: '1.5s',
         }}
       />
+
+      {/* Decorative background image */}
+      <motion.div
+        className="fixed right-0 top-1/2 -translate-y-1/2 w-[400px] md:w-[600px] pointer-events-none z-[1] opacity-[0.04] md:opacity-[0.06]"
+        animate={{ y: [-10, 10, -10] }}
+        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+      >
+        <img src={heroBg} alt="" className="w-full h-auto" />
+      </motion.div>
 
       {/* Main hero layout — text left, image right */}
       <div className="relative z-10 flex flex-col md:flex-row items-center gap-12 md:gap-16">
