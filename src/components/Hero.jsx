@@ -93,9 +93,10 @@ export default function Hero() {
             className="text-[#7A8099] text-sm md:text-base max-w-lg leading-relaxed mb-10 animate-fade-up opacity-0"
             style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}
           >
-            Based in <span className="text-[#C9A84C]">Lahore, Pakistan</span>. Building robust
-            network infrastructure and scalable web solutions with 7+ years of experience across
-            Pakistan, Canada, and the UK.
+            Based in <span className="text-[#C9A84C]">Lahore, Pakistan</span>, I combine
+            <span className="text-[#E8E4D9]"> network engineering</span>,
+            <span className="text-[#E8E4D9]"> IT operations</span>, and
+            <span className="text-[#E8E4D9]"> full-stack development</span> to deliver dependable systems and modern digital products.
           </p>
 
           {/* Buttons */}
@@ -114,13 +115,14 @@ export default function Hero() {
               onMouseEnter={e => (e.target.style.boxShadow = '0 8px 30px rgba(201,168,76,0.45)')}
               onMouseLeave={e => (e.target.style.boxShadow = '0 4px 20px rgba(201,168,76,0.25)')}
             >
-              View Projects →
+              View Selected Work →
             </a>
             <a
-              href="#contact"
+              href="/cv/Jahangir_Ali_CV.pdf"
+              download
               className="px-7 py-3.5 border border-[#C9A84C]/50 text-[#C9A84C] font-sans text-sm font-medium tracking-wide rounded hover:bg-[#C9A84C]/8 hover:border-[#C9A84C] transition-all duration-300"
             >
-              Get In Touch
+              Download CV
             </a>
             <a
               href={personalInfo.github}

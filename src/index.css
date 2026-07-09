@@ -16,3 +16,19 @@ body {
   font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
 }
+
+::selection {
+  background: rgba(201, 168, 76, 0.35);
+  color: #fff;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(201, 168, 76, 0.06) 0.8px, transparent 0.8px);
+  background-size: 24px 24px;
+  opacity: 0.25;
+  z-index: -1;
+}

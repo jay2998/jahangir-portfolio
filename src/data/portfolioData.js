@@ -9,14 +9,28 @@ export const personalInfo = {
     "IoT Solutions Builder",
   ],
   location: "Lahore, Pakistan",
-  company: "Infinity Byte & Skylink", 
+  company: "Infinity Byte & Skylink",
   email: "jahangir.ali2998@gmail.com",
   phone: "+92 3264053540",
   linkedin: "https://linkedin.com/in/jahangir-ali-0352451b5",
   github: "https://github.com/jay2998",
   languages: "English (Fluent) · Urdu (Native)",
   summary:
-    "Results-driven Computer Networking Analyst & Full Stack Developer with 7+ years of hands-on experience across Pakistan, Canada, and the United Kingdom. Expertise in network infrastructure, IT operations, and scalable web development.",
+    "Strategic IT professional with 7+ years of experience delivering reliable networking operations, secure infrastructure, and polished web solutions across Pakistan, Canada, and the United Kingdom.",
+  headline:
+    "Reliable systems engineer and product-minded developer focused on uptime, security, and measurable business impact.",
+  highlights: [
+    "7+ years in networking, IT support, and software delivery",
+    "Experience across enterprise support, freelance consulting, and product teams",
+    "Built scalable web applications and IoT-driven prototypes",
+    "Strong communicator with a track record of calm, dependable delivery",
+  ],
+  focusAreas: [
+    "Network infrastructure design and troubleshooting",
+    "IT operations, incident response, and endpoint security",
+    "Full-stack web development and responsive UX",
+    "IoT systems, automation, and smart-device prototyping",
+  ],
 };
 
 export const stats = [

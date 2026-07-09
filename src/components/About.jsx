@@ -35,14 +35,23 @@ export default function About() {
           className={`transition-all duration-700 ${leftVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
         >
           <p className="text-[#7A8099] leading-relaxed mb-4 text-sm">
-            I'm a results-driven <span className="text-[#C9A84C] font-medium">Computer Networking Analyst & Full Stack Developer</span> with strong experience across IT operations, network infrastructure, and modern web development.
+            I’m a results-driven <span className="text-[#C9A84C] font-medium">Computer Networking Analyst & Full Stack Developer</span> who blends reliable infrastructure delivery with practical product development.
           </p>
           <p className="text-[#7A8099] leading-relaxed mb-4 text-sm">
-            With hands-on expertise across <span className="text-[#C9A84C] font-medium">Pakistan, Canada, and the United Kingdom</span>, I've built and secured networks, led enterprise IT support, and developed real-world applications.
+            With hands-on experience across <span className="text-[#C9A84C] font-medium">Pakistan, Canada, and the United Kingdom</span>, I’ve built secure networks, supported high-availability systems, and shipped web applications that solve real business needs.
           </p>
-          <p className="text-[#7A8099] leading-relaxed mb-10 text-sm">
-            Currently based in <span className="text-[#C9A84C] font-medium">Lahore</span>, working at <span className="text-[#C9A84C] font-medium">Infinity Byte</span>, contributing to both networking infrastructure and full-stack software development.
+          <p className="text-[#7A8099] leading-relaxed mb-6 text-sm">
+            My work is grounded in <span className="text-[#C9A84C] font-medium">stability, clarity, and execution</span> — whether that means resolving incidents quickly or designing polished user experiences.
           </p>
+
+          <div className="grid gap-2.5 mb-8">
+            {personalInfo.highlights.map((item) => (
+              <div key={item} className="flex items-start gap-3 rounded-lg border border-[#C9A84C]/10 bg-[#0D1526]/70 px-4 py-3 text-sm text-[#E8E4D9]">
+                <span className="mt-0.5 text-[#C9A84C]">•</span>
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
 
           <div className="flex flex-col gap-2.5">
             {infoRows.map((row) => (

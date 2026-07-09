@@ -97,7 +97,7 @@ export default function Contact() {
         {/* Left */}
         <div ref={leftRef} className={`transition-all duration-700 ${leftVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
           <p className="text-[#7A8099] text-sm leading-relaxed mb-8">
-            Open to freelance projects, full-time roles, and collaborations. Whether it's a networking challenge or a full-stack build — let's talk.
+            Open to freelance projects, full-time roles, and strategic collaborations. I enjoy solving operational challenges and turning ideas into dependable digital experiences.
           </p>
           <div className="flex flex-col gap-3">
             {contactLinks.map((link) => {
