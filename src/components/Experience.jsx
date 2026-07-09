@@ -30,7 +30,7 @@ function TimelineItem({ exp, index, darkMode }) {
       }`}>
         <ul className="flex flex-col gap-2.5">
           {exp.bullets.map((b, i) => (
-            <li key={i} className={`text-sm leading-relaxed pl-4 relative ${darkMode ? 'text-[#7A8099]' : 'text-[#333]'}`}>// ...
+            <li key={i} className={`text-sm leading-relaxed pl-4 relative ${darkMode ? 'text-[#7A8099]' : 'text-[#333]'}`}>
               <span className="absolute left-0 text-[#C9A84C]/60">›</span>
               {b}
             </li>
@@ -43,7 +43,8 @@ function TimelineItem({ exp, index, darkMode }) {
 
 export default function Experience({ darkMode = true }) {
   return (
-    <section id="experience" className="relative z-10 py-28 px-8 md:px-16 max-w-6xl mx-auto">
+    <section id="experience" className={`relative z-10 py-28 ${darkMode ? '' : 'bg-[#F9F7F3]'}`}>
+      <div className="px-8 md:px-16 max-w-6xl mx-auto">
       <div className="mb-14">
         <p className="font-mono text-xs text-[#C9A84C]/60 tracking-[0.3em] uppercase mb-3">03 — Work History</p>
         <h2 className={`font-display text-4xl md:text-5xl font-bold ${darkMode ? 'text-[#E8E4D9]' : 'text-[#1a1208]'}`}>My <span className="text-[#C9A84C]">Experience</span></h2>
@@ -54,6 +55,7 @@ export default function Experience({ darkMode = true }) {
         {experiences.map((exp, i) => (
           <TimelineItem key={i} exp={exp} index={i} darkMode={darkMode} />
         ))}
+      </div>
       </div>
     </section>
   )
