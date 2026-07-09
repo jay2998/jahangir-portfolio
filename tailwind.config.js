@@ -40,6 +40,14 @@ export default {
           '0%':   { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' },
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%':      { transform: 'translateY(-10px)' },
+        },
+        'pulse-soft': {
+          '0%, 100%': { opacity: '0.6' },
+          '50%':      { opacity: '1' },
+        },
       },
       animation: {
         'fade-up':     'fade-up 0.8s ease forwards',
@@ -47,6 +55,8 @@ export default {
         'scroll-line': 'scroll-line 2s infinite',
         shimmer:       'shimmer 3s linear infinite',
         spin:          'spin 8s linear infinite',
+        float:         'float 4s ease-in-out infinite',
+        'pulse-soft':  'pulse-soft 3s ease-in-out infinite',
       },
     },
   },

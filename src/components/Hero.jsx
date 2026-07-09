@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { useTypewriter } from '../hooks/useTypewriter'
 import { personalInfo, stats } from '../data/portfolioData'
 
@@ -25,17 +26,18 @@ export default function Hero({ darkMode = true }) {
 
       {/* Glow orbs */}
       <div
-        className="fixed top-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none z-0"
+        className="fixed top-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none z-0 animate-pulse-soft"
         style={{
           background: 'radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%)',
           filter: 'blur(40px)',
         }}
       />
       <div
-        className="fixed bottom-1/4 right-0 w-96 h-96 rounded-full pointer-events-none z-0"
+        className="fixed bottom-1/4 right-0 w-96 h-96 rounded-full pointer-events-none z-0 animate-pulse-soft"
         style={{
           background: 'radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 70%)',
           filter: 'blur(60px)',
+          animationDelay: '1.5s',
         }}
       />
 
@@ -107,7 +109,7 @@ export default function Hero({ darkMode = true }) {
             }`}
             style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}
           >
-            Based in <span className={isDark ? 'text-[#C9A84C]' : 'text-[#0a0a0a] font-semibold'}>Lahore, Pakistan</span>, I combine
+            Currently Based in <span className={isDark ? 'text-[#C9A84C]' : 'text-[#0a0a0a] font-semibold'}>Lahore, Pakistan</span>, I combine
             <span className={isDark ? 'text-[#E8E4D9]' : 'text-[#0a0a0a] font-semibold'}> network engineering</span>,
             <span className={isDark ? 'text-[#E8E4D9]' : 'text-[#0a0a0a] font-semibold'}> IT operations</span>, and
             <span className={isDark ? 'text-[#E8E4D9]' : 'text-[#0a0a0a] font-semibold'}> full-stack development</span> to deliver dependable systems and modern digital products.
@@ -176,11 +178,17 @@ export default function Hero({ darkMode = true }) {
         </div>
 
         {/* RIGHT — Profile image */}
-        <div
-          className="shrink-0 animate-fade-up opacity-0"
-          style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}
+        <motion.div
+          className="shrink-0"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.5 }}
         >
-          <div className="relative w-64 h-64 md:w-80 md:h-80">
+          <motion.div
+            className="relative w-64 h-64 md:w-80 md:h-80"
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
+          >
             {/* Outer glow ring */}
             <div
               className="absolute inset-0 rounded-full"
@@ -228,8 +236,8 @@ export default function Hero({ darkMode = true }) {
               <span className="w-1.5 h-1.5 rounded-full bg-[#4ade80] animate-pulse" />
               Available for hire
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* Scroll indicator */}
