@@ -43,10 +43,10 @@ function TimelineItem({ exp, index, darkMode }) {
 
 export default function Experience({ darkMode = true }) {
   return (
-    <section id="experience" className={`relative z-10 py-28 ${darkMode ? '' : 'bg-[#F9F7F3]'}`}>
+    <section id="experience" className={`relative z-10 py-28 scroll-mt-24 ${darkMode ? '' : 'bg-[#F9F7F3]'}`}>
       <div className="px-8 md:px-16 max-w-6xl mx-auto">
       <div className="mb-14">
-        <p className="font-mono text-xs text-[#C9A84C]/60 tracking-[0.3em] uppercase mb-3">03 — Work History</p>
+        <p className={`font-mono text-xs tracking-[0.3em] uppercase mb-3 ${darkMode ? 'text-[#C9A84C]/60' : 'text-[#C9A84C]/80'}`}>03 — Work History</p>
         <h2 className={`font-display text-4xl md:text-5xl font-bold ${darkMode ? 'text-[#E8E4D9]' : 'text-[#1a1208]'}`}>My <span className="text-[#C9A84C]">Experience</span></h2>
         <div className="w-16 h-px bg-gradient-to-r from-[#C9A84C] to-transparent mt-5" />
       </div>

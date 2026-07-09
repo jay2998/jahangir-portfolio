@@ -133,9 +133,9 @@ export default function Projects({ darkMode = true }) {
   const hardwareProjects = projects.filter(p => p.github === null && p.live === null)
 
   return (
-    <section id="projects" className="relative z-10 py-28 px-8 md:px-16 max-w-6xl mx-auto">
+    <section id="projects" className="relative z-10 py-28 px-8 md:px-16 max-w-6xl mx-auto scroll-mt-24">
       <div className="mb-14">
-        <p className="font-mono text-xs text-[#C9A84C]/60 tracking-[0.3em] uppercase mb-3">04 — Featured Work</p>
+        <p className={`font-mono text-xs tracking-[0.3em] uppercase mb-3 ${darkMode ? 'text-[#C9A84C]/60' : 'text-[#C9A84C]/80'}`}>04 — Featured Work</p>
         <h2 className={`font-display text-4xl md:text-5xl font-bold ${darkMode ? 'text-[#E8E4D9]' : 'text-[#1a1208]'}`}>My <span className="text-[#C9A84C]">Projects</span></h2>
         <div className="w-16 h-px bg-gradient-to-r from-[#C9A84C] to-transparent mt-5" />
       </div>

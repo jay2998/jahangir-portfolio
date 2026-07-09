@@ -21,10 +21,10 @@ export default function About({ darkMode = true }) {
   const { ref: rightRef, isVisible: rightVisible } = useScrollAnimation()
 
   return (
-    <section id="about" className={`relative z-10 py-28 ${darkMode ? '' : 'bg-[#F9F7F3]'}`}>
+    <section id="about" className={`relative z-10 py-28 scroll-mt-24 ${darkMode ? '' : 'bg-[#F9F7F3]'}`}>
       <div className="px-8 md:px-16 max-w-6xl mx-auto">
       <div className="mb-14">
-        <p className="font-mono text-xs text-[#C9A84C]/60 tracking-[0.3em] uppercase mb-3">01 — About Me</p>
+        <p className={`font-mono text-xs tracking-[0.3em] uppercase mb-3 ${darkMode ? 'text-[#C9A84C]/60' : 'text-[#C9A84C]/80'}`}>01 — About Me</p>
         <h2 className={`font-display text-4xl md:text-5xl font-bold ${darkMode ? 'text-[#E8E4D9]' : 'text-[#1a1208]'}`}>Who I <span className="text-[#C9A84C]">Am</span></h2>
         <div className="w-16 h-px bg-gradient-to-r from-[#C9A84C] to-transparent mt-5" />
       </div>

@@ -8,7 +8,7 @@ function SkillBar({ name, pct, visible, delay, darkMode }) {
         <span className={`text-xs tracking-wide ${darkMode ? 'text-[#E8E4D9]' : 'text-[#1a1208] font-medium'}`}>{name}</span>
         <span className="font-mono text-[#C9A84C] text-xs">{pct}%</span>
       </div>
-      <div className={`h-px rounded-full overflow-hidden relative ${darkMode ? 'bg-[#111D33]' : 'bg-[#e0dbd3]'}`}>
+      <div className={`h-1.5 rounded-full overflow-hidden relative ${darkMode ? 'bg-[#111D33]' : 'bg-[#e0dbd3]'}`}>
         <div className={`absolute inset-0 ${darkMode ? 'bg-[#111D33]' : 'bg-[#e0dbd3]'}`} />
         <div
           className="h-full rounded-full transition-all duration-1000 ease-out relative"
@@ -67,9 +67,9 @@ function SkillGroup({ group, index, darkMode }) {
 
 export default function Skills({ darkMode = true }) {
   return (
-    <section id="skills" className="relative z-10 py-28 px-8 md:px-16 max-w-6xl mx-auto">
+    <section id="skills" className="relative z-10 py-28 px-8 md:px-16 max-w-6xl mx-auto scroll-mt-24">
       <div className="mb-14">
-        <p className="font-mono text-xs text-[#C9A84C]/60 tracking-[0.3em] uppercase mb-3">02 — Tech Stack</p>
+        <p className={`font-mono text-xs tracking-[0.3em] uppercase mb-3 ${darkMode ? 'text-[#C9A84C]/60' : 'text-[#C9A84C]/80'}`}>02 — Tech Stack</p>
         <h2 className={`font-display text-4xl md:text-5xl font-bold ${darkMode ? 'text-[#E8E4D9]' : 'text-[#1a1208]'}`}>Skills & <span className="text-[#C9A84C]">Tools</span></h2>
         <div className="w-16 h-px bg-gradient-to-r from-[#C9A84C] to-transparent mt-5" />
       </div>

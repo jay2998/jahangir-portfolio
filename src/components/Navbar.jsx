@@ -43,7 +43,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
               }`}
             >
               {link}
-              {active === link && <span className="block h-px bg-[#C9A84C] mt-0.5 w-full" />}
+              {active === link && <span className="block w-1 h-1 bg-[#C9A84C] rounded-full mx-auto mt-0.5" />}
             </a>
           </li>
         ))}
