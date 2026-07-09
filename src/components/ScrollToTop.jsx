@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export default function ScrollToTop() {
+export default function ScrollToTop({ darkMode = true }) {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export default function ScrollToTop() {
     <button
       onClick={scrollUp}
       aria-label="Scroll to top"
-      className={`fixed bottom-8 right-8 z-50 w-11 h-11 rounded-full border border-[#C9A84C]/40 bg-[#0D1526]/90 backdrop-blur-sm flex items-center justify-center text-[#C9A84C] transition-all duration-300 hover:bg-[#C9A84C] hover:text-[#080E1C] hover:border-[#C9A84C] group ${
+      className={`fixed bottom-8 right-8 z-50 w-11 h-11 rounded-full border flex items-center justify-center transition-all duration-300 hover:bg-[#C9A84C] hover:text-[#080E1C] hover:border-[#C9A84C] group ${darkMode ? 'bg-[#0D1526]/90 border-[#C9A84C]/40 text-[#C9A84C]' : 'bg-white/90 border-[#C9A84C]/50 text-[#C9A84C] shadow-sm'} ${
         visible ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
       }`}
       style={{ boxShadow: visible ? '0 4px 20px rgba(201,168,76,0.2)' : 'none' }}

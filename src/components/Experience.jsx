@@ -1,9 +1,8 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { experiences } from '../data/portfolioData'
 
-function TimelineItem({ exp, index }) {
+function TimelineItem({ exp, index, darkMode }) {
   const { ref, isVisible } = useScrollAnimation()
-  const isDark = true
 
   return (
     <div
@@ -14,24 +13,24 @@ function TimelineItem({ exp, index }) {
       style={{ transitionDelay: `${index * 80}ms` }}
     >
       {/* Dot */}
-      <div className="absolute left-[-0.45rem] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-[#C9A84C] bg-[#080E1C]"
+      <div className={`absolute left-[-0.45rem] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-[#C9A84C] ${darkMode ? 'bg-[#080E1C]' : 'bg-white'}`}
         style={{ boxShadow: '0 0 12px rgba(201,168,76,0.4)' }} />
 
       <p className="font-mono text-xs text-[#C9A84C]/60 tracking-widest mb-1.5 uppercase">{exp.date}</p>
-      <h3 className={`font-display text-lg font-semibold mb-1 ${isDark ? 'text-[#E8E4D9]' : 'text-[#1a1208]'}`}>{exp.role}</h3>
+      <h3 className={`font-display text-lg font-semibold mb-1 ${darkMode ? 'text-[#E8E4D9]' : 'text-[#1a1208]'}`}>{exp.role}</h3>
       <p className="text-sm mb-5">
         <span className="text-[#C9A84C]">{exp.company}</span>
-        <span className={isDark ? 'text-[#7A8099]' : 'text-[#555]'}> · {exp.location}</span>
+        <span className={darkMode ? 'text-[#7A8099]' : 'text-[#555]'}> · {exp.location}</span>
       </p>
 
       <div className={`border rounded-xl p-6 transition-colors duration-300 ${
-        isDark 
+        darkMode 
           ? 'bg-[#0D1526] border-[#C9A84C]/10 hover:border-[#C9A84C]/25' 
           : 'bg-white border-[#C9A84C]/15 hover:border-[#C9A84C]/35'
       }`}>
         <ul className="flex flex-col gap-2.5">
           {exp.bullets.map((b, i) => (
-            <li key={i} className={`text-sm leading-relaxed pl-4 relative ${isDark ? 'text-[#7A8099]' : 'text-[#333]'}`}>
+            <li key={i} className={`text-sm leading-relaxed pl-4 relative ${darkMode ? 'text-[#7A8099]' : 'text-[#333]'}`}>// ...
               <span className="absolute left-0 text-[#C9A84C]/60">›</span>
               {b}
             </li>
@@ -42,18 +41,18 @@ function TimelineItem({ exp, index }) {
   )
 }
 
-export default function Experience() {
+export default function Experience({ darkMode = true }) {
   return (
     <section id="experience" className="relative z-10 py-28 px-8 md:px-16 max-w-6xl mx-auto">
       <div className="mb-14">
         <p className="font-mono text-xs text-[#C9A84C]/60 tracking-[0.3em] uppercase mb-3">03 — Work History</p>
-        <h2 className="font-display text-4xl md:text-5xl font-bold text-[#E8E4D9]">My <span className="text-[#C9A84C]">Experience</span></h2>
+        <h2 className={`font-display text-4xl md:text-5xl font-bold ${darkMode ? 'text-[#E8E4D9]' : 'text-[#1a1208]'}`}>My <span className="text-[#C9A84C]">Experience</span></h2>
         <div className="w-16 h-px bg-gradient-to-r from-[#C9A84C] to-transparent mt-5" />
       </div>
 
       <div className="relative pl-6 border-l border-[#C9A84C]/15">
         {experiences.map((exp, i) => (
-          <TimelineItem key={i} exp={exp} index={i} />
+          <TimelineItem key={i} exp={exp} index={i} darkMode={darkMode} />
         ))}
       </div>
     </section>

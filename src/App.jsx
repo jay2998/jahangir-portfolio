@@ -33,7 +33,7 @@ function App() {
         <footer className={`text-center py-8 border-t font-mono text-xs relative z-10 ${foot}`}>
           © 2026 <span className="text-[#C9A84C]">Jahangir Ali</span> · Computer Networking Analyst & Full Stack Developer · Lahore, Pakistan
         </footer>
-        <ScrollToTop />
+        <ScrollToTop darkMode={darkMode} />
       </div>
     </>
   )

@@ -1,33 +1,32 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { projects } from '../data/portfolioData'
 
-function ProjectCard({ project, index }) {
+function ProjectCard({ project, index, darkMode }) {
   const { ref, isVisible } = useScrollAnimation()
   const hasLinks = project.github || project.live || project.publication
-  const isDark = true
 
   return (
     <div
       ref={ref}
       className={`relative border rounded-2xl p-8 overflow-hidden cursor-default group transition-all duration-500 hover:-translate-y-2 flex flex-col ${
-        isDark 
+        darkMode 
           ? 'bg-[#0D1526] border-[#C9A84C]/10 hover:border-[#C9A84C]/40' 
           : 'bg-white border-[#C9A84C]/15 hover:border-[#C9A84C]/40 shadow-sm hover:shadow-md'
       } ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
-      onMouseEnter={e => e.currentTarget.style.boxShadow = isDark ? '0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(201,168,76,0.08)' : '0 10px 30px rgba(201,168,76,0.1)'}
+      onMouseEnter={e => e.currentTarget.style.boxShadow = darkMode ? '0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(201,168,76,0.08)' : '0 10px 30px rgba(201,168,76,0.1)'}
       onMouseLeave={e => e.currentTarget.style.boxShadow = 'none'}
     >
       {/* Top accent on hover */}
-      <div className={`absolute top-0 left-0 right-0 h-px ${isDark ? 'bg-gradient-to-r from-transparent via-[#C9A84C]/40 to-transparent' : 'bg-gradient-to-r from-transparent via-[#C9A84C]/30 to-transparent'} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+      <div className={`absolute top-0 left-0 right-0 h-px ${darkMode ? 'bg-gradient-to-r from-transparent via-[#C9A84C]/40 to-transparent' : 'bg-gradient-to-r from-transparent via-[#C9A84C]/30 to-transparent'} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
 
       {/* Publication badge */}
       {project.publication && (
         <div className="absolute top-4 left-4">
           <span className={`font-mono text-[10px] px-2 py-0.5 border rounded tracking-widest uppercase ${
-            isDark 
+            darkMode 
               ? 'bg-[#C9A84C]/10 border-[#C9A84C]/30 text-[#C9A84C]/80' 
               : 'bg-[#C9A84C]/8 border-[#C9A84C]/40 text-[#555]'
           }`}>
@@ -38,14 +37,14 @@ function ProjectCard({ project, index }) {
 
       {/* Big number */}
       <span className={`absolute top-5 right-6 font-display text-5xl font-bold select-none group-hover:text-[#C9A84C]/12 transition-colors duration-300 ${
-        isDark ? 'text-[#C9A84C]/6' : 'text-[#C9A84C]/3'
+        darkMode ? 'text-[#C9A84C]/6' : 'text-[#C9A84C]/3'
       }`}>
         {project.num}
       </span>
 
       <div className={`text-3xl mb-5 ${project.publication ? 'mt-6' : ''}`}>{project.icon}</div>
-      <h3 className={`font-display text-lg font-semibold mb-3 ${isDark ? 'text-[#E8E4D9]' : 'text-[#1a1208]'}`}>{project.title}</h3>
-      <p className={`text-sm leading-relaxed mb-6 flex-1 ${isDark ? 'text-[#7A8099]' : 'text-[#555]'}`}>{project.desc}</p>
+      <h3 className={`font-display text-lg font-semibold mb-3 ${darkMode ? 'text-[#E8E4D9]' : 'text-[#1a1208]'}`}>{project.title}</h3>
+      <p className={`text-sm leading-relaxed mb-6 flex-1 ${darkMode ? 'text-[#7A8099]' : 'text-[#555]'}`}>{project.desc}</p>
 
       {/* Tags */}
       <div className="flex flex-wrap gap-2 mb-6">
@@ -53,7 +52,7 @@ function ProjectCard({ project, index }) {
           <span
             key={tag}
             className={`font-mono text-xs px-2.5 py-1 border rounded tracking-wide ${
-              isDark 
+              darkMode 
                 ? 'border-[#C9A84C]/20 text-[#C9A84C]/70 bg-[#C9A84C]/5' 
                 : 'border-[#C9A84C]/25 text-[#555] bg-[#C9A84C]/3'
             }`}
@@ -65,14 +64,14 @@ function ProjectCard({ project, index }) {
 
       {/* Links */}
       {hasLinks && (
-        <div className={`flex flex-wrap items-center gap-4 pt-5 border-t ${isDark ? 'border-[#C9A84C]/10' : 'border-[#C9A84C]/15'}`}>
+        <div className={`flex flex-wrap items-center gap-4 pt-5 border-t ${darkMode ? 'border-[#C9A84C]/10' : 'border-[#C9A84C]/15'}`}>
           {project.github && (
             <a
               href={project.github}
               target="_blank"
               rel="noreferrer"
               className={`flex items-center gap-1.5 text-xs font-mono transition-colors duration-300 ${
-                isDark 
+                darkMode 
                   ? 'text-[#7A8099] hover:text-[#C9A84C]' 
                   : 'text-[#555] hover:text-[#C9A84C]'
               }`}
@@ -89,7 +88,7 @@ function ProjectCard({ project, index }) {
               target="_blank"
               rel="noreferrer"
               className={`flex items-center gap-1.5 text-xs font-mono transition-colors duration-300 ${
-                isDark 
+                darkMode 
                   ? 'text-[#7A8099] hover:text-[#C9A84C]' 
                   : 'text-[#555] hover:text-[#C9A84C]'
               }`}
@@ -110,7 +109,7 @@ function ProjectCard({ project, index }) {
               target="_blank"
               rel="noreferrer"
               className={`flex items-center gap-1.5 text-xs font-mono transition-colors duration-300 ml-auto ${
-                isDark 
+                darkMode 
                   ? 'text-[#7A8099] hover:text-[#C9A84C]' 
                   : 'text-[#555] hover:text-[#C9A84C]'
               }`}
@@ -129,7 +128,7 @@ function ProjectCard({ project, index }) {
   )
 }
 
-export default function Projects() {
+export default function Projects({ darkMode = true }) {
   const webProjects = projects.filter(p => p.github !== null || p.live !== null)
   const hardwareProjects = projects.filter(p => p.github === null && p.live === null)
 
@@ -137,7 +136,7 @@ export default function Projects() {
     <section id="projects" className="relative z-10 py-28 px-8 md:px-16 max-w-6xl mx-auto">
       <div className="mb-14">
         <p className="font-mono text-xs text-[#C9A84C]/60 tracking-[0.3em] uppercase mb-3">04 — Featured Work</p>
-        <h2 className="font-display text-4xl md:text-5xl font-bold text-[#E8E4D9]">My <span className="text-[#C9A84C]">Projects</span></h2>
+        <h2 className={`font-display text-4xl md:text-5xl font-bold ${darkMode ? 'text-[#E8E4D9]' : 'text-[#1a1208]'}`}>My <span className="text-[#C9A84C]">Projects</span></h2>
         <div className="w-16 h-px bg-gradient-to-r from-[#C9A84C] to-transparent mt-5" />
       </div>
 
@@ -145,7 +144,7 @@ export default function Projects() {
       <p className="font-mono text-xs text-[#C9A84C]/50 tracking-[0.2em] uppercase mb-5">// Full Stack & Web</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
         {webProjects.map((p, i) => (
-          <ProjectCard key={p.num} project={p} index={i} />
+          <ProjectCard key={p.num} project={p} index={i} darkMode={darkMode} />
         ))}
       </div>
 
@@ -153,7 +152,7 @@ export default function Projects() {
       <p className="font-mono text-xs text-[#C9A84C]/50 tracking-[0.2em] uppercase mb-5">// Hardware & IoT</p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {hardwareProjects.map((p, i) => (
-          <ProjectCard key={p.num} project={p} index={i} />
+          <ProjectCard key={p.num} project={p} index={i} darkMode={darkMode} />
         ))}
       </div>
     </section>

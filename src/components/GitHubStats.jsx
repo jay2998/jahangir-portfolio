@@ -1,7 +1,7 @@
 import { useGitHubStats } from '../hooks/useGitHubStats'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
-export default function GitHubStats() {
+export default function GitHubStats({ darkMode = true }) {
   const { stats, loading } = useGitHubStats()
   const { ref, isVisible } = useScrollAnimation()
 
@@ -14,7 +14,7 @@ export default function GitHubStats() {
   return (
     <div
       ref={ref}
-      className={`mt-8 p-6 bg-[#0D1526] border border-[#C9A84C]/10 rounded-2xl transition-all duration-700 ${
+      className={`mt-8 p-6 rounded-2xl transition-all duration-700 ${darkMode ? 'bg-[#0D1526] border border-[#C9A84C]/10' : 'bg-white border border-[#C9A84C]/20 shadow-sm'} ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
     >

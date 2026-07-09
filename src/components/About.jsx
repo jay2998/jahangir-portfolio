@@ -16,7 +16,7 @@ const specialties = [
   { icon: '☁️', label: 'Cloud & M365' },
 ]
 
-export default function About() {
+export default function About({ darkMode = true }) {
   const { ref: leftRef, isVisible: leftVisible } = useScrollAnimation()
   const { ref: rightRef, isVisible: rightVisible } = useScrollAnimation()
 
@@ -24,7 +24,7 @@ export default function About() {
     <section id="about" className="relative z-10 py-28 px-8 md:px-16 max-w-6xl mx-auto">
       <div className="mb-14">
         <p className="font-mono text-xs text-[#C9A84C]/60 tracking-[0.3em] uppercase mb-3">01 — About Me</p>
-        <h2 className="font-display text-4xl md:text-5xl font-bold text-[#E8E4D9]">Who I <span className="text-[#C9A84C]">Am</span></h2>
+        <h2 className={`font-display text-4xl md:text-5xl font-bold ${darkMode ? 'text-[#E8E4D9]' : 'text-[#1a1208]'}`}>Who I <span className="text-[#C9A84C]">Am</span></h2>
         <div className="w-16 h-px bg-gradient-to-r from-[#C9A84C] to-transparent mt-5" />
       </div>
 
@@ -34,19 +34,19 @@ export default function About() {
           ref={leftRef}
           className={`transition-all duration-700 ${leftVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
         >
-          <p className="text-[#7A8099] leading-relaxed mb-4 text-sm">
+          <p className={`leading-relaxed mb-4 text-sm ${darkMode ? 'text-[#7A8099]' : 'text-[#444]'}`}>
             I’m a results-driven <span className="text-[#C9A84C] font-medium">Computer Networking Analyst & Full Stack Developer</span> who blends reliable infrastructure delivery with practical product development.
           </p>
-          <p className="text-[#7A8099] leading-relaxed mb-4 text-sm">
+          <p className={`leading-relaxed mb-4 text-sm ${darkMode ? 'text-[#7A8099]' : 'text-[#444]'}`}>
             With hands-on experience across <span className="text-[#C9A84C] font-medium">Pakistan, Canada, and the United Kingdom</span>, I’ve built secure networks, supported high-availability systems, and shipped web applications that solve real business needs.
           </p>
-          <p className="text-[#7A8099] leading-relaxed mb-6 text-sm">
+          <p className={`leading-relaxed mb-6 text-sm ${darkMode ? 'text-[#7A8099]' : 'text-[#444]'}`}>
             My work is grounded in <span className="text-[#C9A84C] font-medium">stability, clarity, and execution</span> — whether that means resolving incidents quickly or designing polished user experiences.
           </p>
 
           <div className="grid gap-2.5 mb-8">
             {personalInfo.highlights.map((item) => (
-              <div key={item} className="flex items-start gap-3 rounded-lg border border-[#C9A84C]/10 bg-[#0D1526]/70 px-4 py-3 text-sm text-[#E8E4D9]">
+              <div key={item} className={`flex items-start gap-3 rounded-lg border px-4 py-3 text-sm ${darkMode ? 'bg-[#0D1526]/70 border-[#C9A84C]/10 text-[#E8E4D9]' : 'bg-[#F9F7F3] border-[#C9A84C]/20 text-[#333]'}`}>
                 <span className="mt-0.5 text-[#C9A84C]">•</span>
                 <span>{item}</span>
               </div>
@@ -55,10 +55,10 @@ export default function About() {
 
           <div className="flex flex-col gap-2.5">
             {infoRows.map((row) => (
-              <div key={row.label} className={`flex items-center gap-4 px-5 py-3.5 border rounded-lg text-sm transition-colors duration-300 ${true ? 'bg-[#0D1526] border-[#C9A84C]/10 hover:border-[#C9A84C]/30' : 'bg-white border-[#C9A84C]/20 hover:border-[#C9A84C]/40 hover:bg-[#F9F7F3]'}`}>
-                <span className={`font-mono text-xs w-20 shrink-0 tracking-wider ${true ? 'text-[#C9A84C]/70' : 'text-[#555]'}`}>{row.label}</span>
+              <div key={row.label} className={`flex items-center gap-4 px-5 py-3.5 border rounded-lg text-sm transition-colors duration-300 ${darkMode ? 'bg-[#0D1526] border-[#C9A84C]/10 hover:border-[#C9A84C]/30' : 'bg-white border-[#C9A84C]/20 hover:border-[#C9A84C]/40 hover:bg-[#F9F7F3]'}`}>
+                <span className={`font-mono text-xs w-20 shrink-0 tracking-wider ${darkMode ? 'text-[#C9A84C]/70' : 'text-[#555]'}`}>{row.label}</span>
                 <span className="w-px h-4 bg-[#C9A84C]/20 shrink-0" />
-                <span className={`text-xs ${true ? 'text-[#E8E4D9]' : 'text-[#1a1208]'}`}>{row.value}</span>
+                <span className={`text-xs ${darkMode ? 'text-[#E8E4D9]' : 'text-[#1a1208]'}`}>{row.value}</span>
               </div>
             ))}
           </div>
@@ -69,23 +69,23 @@ export default function About() {
           ref={rightRef}
           className={`transition-all duration-700 delay-150 ${rightVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}
         >
-          <div className={`border rounded-2xl p-8 relative overflow-hidden ${true ? 'bg-[#0D1526] border-[#C9A84C]/15' : 'bg-white border-[#C9A84C]/20 shadow-sm'}`}>
-            <div className={`absolute top-0 left-0 right-0 h-px ${true ? 'bg-gradient-to-r from-transparent via-[#C9A84C]/50 to-transparent' : 'bg-gradient-to-r from-transparent via-[#C9A84C]/30 to-transparent'}`} />
-            <div className={`absolute bottom-0 left-0 right-0 h-px ${true ? 'bg-gradient-to-r from-transparent via-[#C9A84C]/20 to-transparent' : 'bg-gradient-to-r from-transparent via-[#C9A84C]/15 to-transparent'}`} />
+          <div className={`border rounded-2xl p-8 relative overflow-hidden ${darkMode ? 'bg-[#0D1526] border-[#C9A84C]/15' : 'bg-white border-[#C9A84C]/20 shadow-sm'}`}>
+            <div className={`absolute top-0 left-0 right-0 h-px ${darkMode ? 'bg-gradient-to-r from-transparent via-[#C9A84C]/50 to-transparent' : 'bg-gradient-to-r from-transparent via-[#C9A84C]/30 to-transparent'}`} />
+            <div className={`absolute bottom-0 left-0 right-0 h-px ${darkMode ? 'bg-gradient-to-r from-transparent via-[#C9A84C]/20 to-transparent' : 'bg-gradient-to-r from-transparent via-[#C9A84C]/15 to-transparent'}`} />
 
-            <p className={`font-mono text-xs mb-6 tracking-wider ${true ? 'text-[#7A8099]/60' : 'text-[#555]/70'}`}>// expertise</p>
+            <p className={`font-mono text-xs mb-6 tracking-wider ${darkMode ? 'text-[#7A8099]/60' : 'text-[#555]/70'}`}>// expertise</p>
             <div className="grid grid-cols-2 gap-3">
               {specialties.map((s) => (
                 <div
                   key={s.label}
                   className={`flex flex-col items-center gap-3 py-7 px-3 border rounded-xl text-center transition-all duration-300 hover:-translate-y-1 cursor-default ${
-                    true 
+                    darkMode 
                       ? 'bg-[#111D33] border-[#C9A84C]/8 hover:border-[#C9A84C]/40 hover:bg-[#C9A84C]/5' 
                       : 'bg-[#F9F7F3] border-[#C9A84C]/15 hover:border-[#C9A84C]/40 hover:bg-[#F0EDE8]'
                   }`}
                 >
                   <span className="text-3xl">{s.icon}</span>
-                  <span className={`text-xs tracking-wide ${true ? 'text-[#7A8099]' : 'text-[#333]'}`}>{s.label}</span>
+                  <span className={`text-xs tracking-wide ${darkMode ? 'text-[#7A8099]' : 'text-[#333]'}`}>{s.label}</span>
                 </div>
               ))}
             </div>

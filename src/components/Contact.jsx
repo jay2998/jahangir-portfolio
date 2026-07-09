@@ -54,7 +54,7 @@ const contactLinks = [
   },
 ]
 
-export default function Contact() {
+export default function Contact({ darkMode = true }) {
   const { ref: leftRef, isVisible: leftVisible } = useScrollAnimation()
   const { ref: rightRef, isVisible: rightVisible } = useScrollAnimation()
   const formRef = useRef(null)
@@ -89,14 +89,14 @@ export default function Contact() {
     <section id="contact" className="relative z-10 py-28 px-8 md:px-16 max-w-6xl mx-auto">
       <div className="mb-14">
         <p className="font-mono text-xs text-[#C9A84C]/60 tracking-[0.3em] uppercase mb-3">06 — Get In Touch</p>
-        <h2 className="font-display text-4xl md:text-5xl font-bold text-[#E8E4D9]">Contact <span className="text-[#C9A84C]">Me</span></h2>
+        <h2 className={`font-display text-4xl md:text-5xl font-bold ${darkMode ? 'text-[#E8E4D9]' : 'text-[#1a1208]'}`}>Contact <span className="text-[#C9A84C]">Me</span></h2>
         <div className="w-16 h-px bg-gradient-to-r from-[#C9A84C] to-transparent mt-5" />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
         {/* Left */}
         <div ref={leftRef} className={`transition-all duration-700 ${leftVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
-          <p className="text-[#7A8099] text-sm leading-relaxed mb-8">
+          <p className={`text-sm leading-relaxed mb-8 ${darkMode ? 'text-[#7A8099]' : 'text-[#444]'}`}>
             Open to freelance projects, full-time roles, and strategic collaborations. I enjoy solving operational challenges and turning ideas into dependable digital experiences.
           </p>
           <div className="flex flex-col gap-3">
@@ -108,7 +108,7 @@ export default function Contact() {
                   href={link.href || undefined}
                   target={link.href?.startsWith('http') ? '_blank' : undefined}
                   rel={link.href?.startsWith('http') ? 'noreferrer' : undefined}
-                  className={`flex items-center gap-5 px-6 py-4 bg-[#0D1526] border border-[#C9A84C]/10 rounded-xl transition-all duration-300 no-underline group ${
+                  className={`flex items-center gap-5 px-6 py-4 rounded-xl transition-all duration-300 no-underline group ${darkMode ? 'bg-[#0D1526] border border-[#C9A84C]/10' : 'bg-white border border-[#C9A84C]/20 shadow-sm'} ${
                     link.href ? 'hover:border-[#C9A84C]/40 hover:translate-x-1 cursor-pointer' : 'cursor-default'
                   }`}
                 >
@@ -117,7 +117,7 @@ export default function Contact() {
                   </span>
                   <div>
                     <p className="font-mono text-xs text-[#7A8099]/60 tracking-widest uppercase mb-0.5">{link.label}</p>
-                    <p className="text-sm text-[#E8E4D9]">{link.value}</p>
+                    <p className={`text-sm ${darkMode ? 'text-[#E8E4D9]' : 'text-[#1a1208]'}`}>{link.value}</p>
                   </div>
                   {link.href && (
                     <svg className="ml-auto shrink-0 text-[#C9A84C]/0 group-hover:text-[#C9A84C]/60 transition-colors duration-300" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -151,7 +151,7 @@ export default function Contact() {
                   value={formData[f.id]}
                   onChange={handleChange}
                   required={f.id !== 'subject'}
-                  className="bg-[#0D1526] border border-[#C9A84C]/10 rounded-lg px-5 py-3.5 text-sm text-[#E8E4D9] outline-none focus:border-[#C9A84C]/50 transition-all duration-300 placeholder:text-[#7A8099]/30 font-sans"
+                  className={`rounded-lg px-5 py-3.5 text-sm outline-none focus:border-[#C9A84C]/50 transition-all duration-300 font-sans ${darkMode ? 'bg-[#0D1526] border border-[#C9A84C]/10 text-[#E8E4D9] placeholder:text-[#7A8099]/30' : 'bg-white border border-[#C9A84C]/20 text-[#1a1208] placeholder:text-[#999]/60 shadow-sm'}`}
                 />
               </div>
             ))}
@@ -166,7 +166,7 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="bg-[#0D1526] border border-[#C9A84C]/10 rounded-lg px-5 py-3.5 text-sm text-[#E8E4D9] outline-none focus:border-[#C9A84C]/50 transition-all duration-300 placeholder:text-[#7A8099]/30 resize-y font-sans"
+                className={`rounded-lg px-5 py-3.5 text-sm outline-none focus:border-[#C9A84C]/50 transition-all duration-300 resize-y font-sans ${darkMode ? 'bg-[#0D1526] border border-[#C9A84C]/10 text-[#E8E4D9] placeholder:text-[#7A8099]/30' : 'bg-white border border-[#C9A84C]/20 text-[#1a1208] placeholder:text-[#999]/60 shadow-sm'}`}
               />
             </div>
 
