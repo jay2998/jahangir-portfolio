@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useTypewriter } from '../hooks/useTypewriter'
 import { personalInfo, stats } from '../data/portfolioData'
+import NetworkGraphic from './NetworkGraphic'
 
 
 const PROFILE_IMAGE = '/images/profile.jpg'
@@ -40,6 +41,9 @@ export default function Hero({ darkMode = true }) {
           animationDelay: '1.5s',
         }}
       />
+
+      {/* Network topology decorative graphic */}
+      <NetworkGraphic darkMode={isDark} />
 
       {/* Main hero layout — text left, image right */}
       <div className="relative z-10 flex flex-col md:flex-row items-center gap-12 md:gap-16">
