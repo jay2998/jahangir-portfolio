@@ -66,7 +66,7 @@ export default function Hero({ darkMode = true }) {
               style={{
                 background: isDark 
                   ? 'linear-gradient(90deg, #C9A84C, #E8C96A, #C9A84C)'
-                  : 'linear-gradient(90deg, #0a0a0a, #333, #0a0a0a)',
+                  : 'linear-gradient(90deg, #C9A84C, #0a0a0a, #C9A84C)',
                 backgroundSize: '200% auto',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
