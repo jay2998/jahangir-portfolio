@@ -8,7 +8,7 @@ function ProjectCard({ project, index, darkMode }) {
   return (
     <div
       ref={ref}
-      className={`relative border rounded-2xl p-8 overflow-hidden cursor-default group transition-all duration-500 hover:-translate-y-2 flex flex-col ${
+      className={`relative border rounded-2xl p-8 overflow-hidden cursor-default group transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] flex flex-col ${
         darkMode 
           ? 'bg-[#0D1526] border-[#C9A84C]/10 hover:border-[#C9A84C]/40' 
           : 'bg-white border-[#C9A84C]/15 hover:border-[#C9A84C]/40 shadow-sm hover:shadow-md'

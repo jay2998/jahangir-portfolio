@@ -1,7 +1,6 @@
 export const personalInfo = {
   name: "Jahangir Ali",
   title: "Full Stack Developer & Network Administrator",
-  title2: "Network Administrator",
   titles: [
     "Full Stack Developer & Network Administrator",
     "Computer Networking Analyst",

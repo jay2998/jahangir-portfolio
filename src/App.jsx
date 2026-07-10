@@ -8,6 +8,7 @@ import Projects from './components/Projects'
 import Education from './components/Education'
 import Contact from './components/Contact'
 import ScrollToTop from './components/ScrollToTop'
+import ScrollProgress from './components/ScrollProgress'
 import LoadingScreen from './components/LoadingScreen'
 import CursorGlow from './components/CursorGlow'
 
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <>
+      <ScrollProgress />
       <LoadingScreen />
       <CursorGlow />
       <div className={`min-h-screen overflow-x-hidden transition-colors duration-500 ${bg}`}>
@@ -35,7 +37,7 @@ function App() {
         <Education darkMode={darkMode} />
         <Contact darkMode={darkMode} />
         <footer className={`text-center py-8 border-t font-mono text-xs relative z-10 ${foot}`}>
-          © 2026 <span className="text-[#C9A84C]">Jahangir Ali</span> · Computer Networking Analyst & Full Stack Developer · Lahore, Pakistan
+          © 2026 <span className="text-[#C9A84C]">Jahangir Ali</span> · Full Stack Developer & Network Administrator · Remote
         </footer>
         <ScrollToTop darkMode={darkMode} />
       </div>
