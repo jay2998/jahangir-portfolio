@@ -8,7 +8,7 @@ export const personalInfo = {
     "Network Infrastructure Engineer",
     "IoT Solutions Builder",
   ],
-  location: "Lahore, Pakistan",
+  location: "Remote",
   company: "Afaq Technologies",
   email: "jahangir.ali2998@gmail.com",
   phone: "+92 3091566664",
@@ -88,7 +88,7 @@ export const experiences = [
     date: "FEB 2024 — PRESENT",
     role: "Full Stack Developer & Network Administrator",
     company: "Afaq Technologies",
-    location: "Lahore, Pakistan",
+    location: "Remote",
     bullets: [
       "Architected and engineered responsive, high-performance web applications using React, Node.js, Tailwind CSS, and JavaScript/JSX.",
       "Spearheaded development of a full-stack Point-of-Sale (POS) system, focusing on an efficient frontend and user-friendly interface to streamline transactions.",

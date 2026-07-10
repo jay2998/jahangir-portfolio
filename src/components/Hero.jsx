@@ -113,7 +113,7 @@ export default function Hero({ darkMode = true }) {
             }`}
             style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}
           >
-            Currently Based in <span className={isDark ? 'text-[#C9A84C]' : 'text-[#0a0a0a] font-semibold'}>Lahore, Pakistan</span>, I combine
+            <span className={isDark ? 'text-[#C9A84C]' : 'text-[#0a0a0a] font-semibold'}>Remote · Available Worldwide</span> — I combine
             <span className={isDark ? 'text-[#E8E4D9]' : 'text-[#0a0a0a] font-semibold'}> network engineering</span>,
             <span className={isDark ? 'text-[#E8E4D9]' : 'text-[#0a0a0a] font-semibold'}> IT operations</span>, and
             <span className={isDark ? 'text-[#E8E4D9]' : 'text-[#0a0a0a] font-semibold'}> full-stack development</span> to deliver dependable systems and modern digital products.
