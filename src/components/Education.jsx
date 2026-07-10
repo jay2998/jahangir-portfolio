@@ -28,7 +28,8 @@ function EduCard({ edu, index, darkMode }) {
       <p className="font-mono text-xs text-[#C9A84C]/60 tracking-[0.2em] uppercase mb-3">{edu.degree}</p>
       <h3 className={`font-display text-lg font-semibold mb-3 leading-snug ${darkMode ? 'text-[#E8E4D9]' : 'text-[#1a1208]'}`}>{edu.title}</h3>
       <p className={`text-sm mb-1 ${darkMode ? 'text-[#C9A84C]/80' : 'text-[#555]'}`}>{edu.uni}</p>
-      <p className={`text-sm ${darkMode ? 'text-[#7A8099]' : 'text-[#666]'}`}>{edu.location}</p>
+      <p className={`text-sm mb-3 ${darkMode ? 'text-[#7A8099]' : 'text-[#666]'}`}>{edu.location}</p>
+      {edu.desc && <p className={`text-xs leading-relaxed ${darkMode ? 'text-[#7A8099]/70' : 'text-[#777]'}`}>{edu.desc}</p>}
     </div>
   )
 }

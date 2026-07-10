@@ -36,7 +36,7 @@ export default function About({ darkMode = true }) {
           className={`transition-all duration-700 ${leftVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
         >
           <p className={`leading-relaxed mb-4 text-sm ${darkMode ? 'text-[#7A8099]' : 'text-[#444]'}`}>
-            I’m a results-driven <span className="text-[#C9A84C] font-medium">Computer Networking Analyst & Full Stack Developer</span> who blends reliable infrastructure delivery with practical product development.
+            I’m a results-driven <span className="text-[#C9A84C] font-medium">Full Stack Developer & Network Administrator</span> who blends reliable infrastructure delivery with practical product development.
           </p>
           <p className={`leading-relaxed mb-4 text-sm ${darkMode ? 'text-[#7A8099]' : 'text-[#444]'}`}>
             With hands-on experience across <span className="text-[#C9A84C] font-medium">Pakistan, Canada, and the United Kingdom</span>, I’ve built secure networks, supported high-availability systems, and shipped web applications that solve real business needs.

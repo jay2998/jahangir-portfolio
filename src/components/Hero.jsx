@@ -138,7 +138,7 @@ export default function Hero({ darkMode = true }) {
               View Selected Work →
             </a>
             <a
-              href="/cv/Jahangir Ali CV Pakistan 2026.pdf"
+              href="/cv/Jahangir_Ali_CV_Pakistan.pdf"
               download
               className={`px-7 py-3.5 font-sans text-sm font-medium tracking-wide rounded transition-all duration-300 border ${
                 isDark 
