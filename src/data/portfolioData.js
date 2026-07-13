@@ -11,7 +11,7 @@ export const personalInfo = {
   company: "Afaq Technologies",
   email: "jahangir.ali2998@gmail.com",
   phone: "+1 647-325-2998 · +92 3091566664",
-  linkedin: "https://linkedin.com/in/jahangir-ali-0352451b5",
+  linkedin: "https://www.linkedin.com/in/jahangir-ali2998/",
   github: "https://github.com/jay2998",
   languages: "English (Fluent) · Urdu (Native)",
   summary:
